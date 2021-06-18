@@ -8,18 +8,5 @@
 </head>
 <body>
 
-<h2>Sector Administrativo</h2>
-
-<h3>Opciones: </h3>
-
-<a href="Banco/Solicitudes.jsp"> Solicitudes </a>
-<a href="Banco/IngresarCliente.jsp"> Ingreso cliente </a>
-<a href="Banco/ModificarCliente"> Mod cliente</a>
-<a href="Banco/BajaCliente"> Baja cliente</a>
-<a href="Banco/Informes.jsp"> Baja cliente</a>
-
-<h1> Tareas pendientes </h1>
-
-
 </body>
 </html>

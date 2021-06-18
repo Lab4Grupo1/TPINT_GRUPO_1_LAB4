@@ -8,15 +8,5 @@
 </head>
 <body>
 
-<h1>ALta cliente</h1>
-
-<form action="">
-	<input type="text" name="txtUserName">
-	<input type="text" name="txtNombre">
-	<input type="text" name="txtApellido">
-	<input type="password" name="UserPass">
-	<input type="submit">
-</form>
-
 </body>
 </html>
