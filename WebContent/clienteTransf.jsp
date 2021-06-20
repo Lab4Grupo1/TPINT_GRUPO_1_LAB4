@@ -6,6 +6,7 @@
     </jsp:attribute>
 
     <jsp:body>
-    <h2>Transferencias</h2>
+	<h2>Transferencias</h2>
+    
     </jsp:body>
-</t:masterCliente>>
+</t:masterCliente>

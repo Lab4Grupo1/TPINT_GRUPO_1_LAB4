@@ -9,48 +9,43 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 	crossorigin="anonymous">
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+	rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/estilos.css" rel="stylesheet" type="text/css" />
 
 <title><jsp:invoke fragment="header" /></title>
 
-<style>
-body {
-	background: #dcdcde;
-}
-</style>
-
 </head>
 <body>
-	<div class="container">
-		<div class="col">
-			<h1 align="center">Banco</h1>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="row">
-					<div class="col">
-						<img src="image/logo.png" style="height: 50px; width: 50px">
-					</div>
-					<div class="col">
-						<label style="text-align: right;">Usuario:</label>
+
+	<div class=".container">
+		<div class="row row-principal">
+			<div class="col-2 col-menu">
+				<div class="col">
+					<img class="rounded mx-auto d-block logo" src="image/steam2.png">
+					<br> <br> <label class="UserName">Usuario: Sesion</label>
+					<hr>
+				</div>
+				<div class="row row-opciones">
+					<div class="btn-group-vertical" style="width: 100%;" role="group" aria-label="Basic outlined example">
+						<a class="btn btn-dark" href="bancoSolicitudes.jsp">Solicitudes</a>
+						<a class="btn btn-dark" href="bancoAltaCliente.jsp">Alta</a> 
+						<a class="btn btn-dark" href="bancoModificarCliente.jsp">Modificacion</a>
+						<a class="btn btn-dark" href="bancoBajaCliente.jsp">Baja</a> 
+						<a class="btn btn-dark" href="bancoInformes.jsp">Informes</a>
 					</div>
 				</div>
-				<br>
-				<div class="row">
-					<div class="btn-group-vertical" role="group" aria-label="Basic outlined example">
-						<a type="button" class="btn btn-outline-primary" href="bancoSolicitudes.jsp">Solicitudes</a>
-						<a type="button" class="btn btn-outline-primary" href="bancoAltaCliente.jsp"> Alta Cliente</a>
-						<a type="button" class="btn btn-outline-primary" href="bancoModificarCliente.jsp"> Modificar Cliente</a>
-						<a type="button" class="btn btn-outline-primary" href="bancoBajaCliente.jsp"> Baja Cliente</a>
-						<a type="button" class="btn btn-outline-primary" href="bancoInformes.jsp">Informes de cuentas</a>
-					</div>
+				<div class="row row-sesion">
+					<a class="btn btn-dark"  href="google.com">Cerrar sesion</a>
 				</div>
 			</div>
-			<div class="col-10">
+			<div class="col">
 				<div class="page" id="page">
-				<br><br>
-					<div role="main" align="center"><jsp:doBody /></div>
+					<h1 class="titulo">Cliente</h1>
+					<div role="main"><jsp:doBody /></div>
 				</div>
 			</div>
 		</div>
