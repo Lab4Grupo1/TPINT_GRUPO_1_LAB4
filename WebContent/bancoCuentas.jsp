@@ -8,6 +8,15 @@
 <h4>Cuentas</h4>
 
 <div class=".container-sm" style="width: 90%"> 
+
+	<div class="form-row">
+	   <div class="col-md-3 mb">
+	     <label for="cliente">Busqueda cliente</label>
+	     <input type="text" class="form-control" id="cliente" placeholder="cliente" required>
+	   </div>  
+	 <button class="btn btn-primary" type="submit">Aceptar</button>
+	</div>
+	<br>
 <form>
   
 	<div class="dropdown">

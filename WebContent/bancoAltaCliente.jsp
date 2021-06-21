@@ -72,9 +72,7 @@
       <br>
       <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
       <label class="form-check-label" for="Femenino">Femenino</label>
-      <br>
-      <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
-      <label class="form-check-label" for="Femenino">Trabuco</label>
+      <br> 
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Aceptar</button>

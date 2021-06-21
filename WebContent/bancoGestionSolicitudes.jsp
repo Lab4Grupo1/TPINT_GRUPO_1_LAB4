@@ -5,11 +5,17 @@
 
 <jsp:body>
 
-<h4>Gestion Solicitudes</h4> 
-<h4>Autorizar</h4> 
-<h4>Rechazar</h4> 
-<h4>Monto pedido</h4>
-<h4>Generar cuotas</h4> 
+<h4>Gestion Solicitudes</h4>  
+
+
+<h4>Monto pedido input</h4>
+<h4>Generar cuotas dropdown</h4> 
+
+ 
+	
+	
+  <button class="btn btn-primary" type="submit">Autorizar</button>
+  <button class="btn btn-primary" type="submit">Rechazar</button>
 
 </jsp:body>
 </t:masterBanco>

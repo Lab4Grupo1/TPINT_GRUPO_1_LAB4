@@ -44,7 +44,7 @@
 			</div>
 			<div class="col">
 				<div class="page" id="page">
-					<h1 class="titulo">Cliente</h1>
+					<h3 class="titulo">Cliente</h3>
 					<div role="main"><jsp:doBody /></div>
 				</div>
 			</div>
