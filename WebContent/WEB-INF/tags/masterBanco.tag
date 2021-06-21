@@ -46,7 +46,7 @@
 			</div>
 			<div class="col">
 				<div class="page" id="page">
-					<h1 class="titulo">Cliente</h1>
+					<h1 class="titulo">Administracion</h1>
 					<div role="main"><jsp:doBody /></div>
 				</div>
 			</div>
