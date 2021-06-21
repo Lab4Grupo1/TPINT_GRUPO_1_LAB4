@@ -33,7 +33,7 @@
 					<div class="btn-group-vertical" style="width: 100%;" role="group" aria-label="Basic outlined example">					
 						<a class="btn btn-dark" href="clienteCuentas.jsp">Cuentas</a> 
 						<a class="btn btn-dark" href="clientePagos.jsp">Pagos</a> 
-						<a class="btn btn-dark" href="clienteTransf.jsp">Transferencias</a>
+						<a class="btn btn-dark" href="clienteTransf_CuentaPropia.jsp">Transferencias</a>
 						<a class="btn btn-dark" href="clientePrestamos.jsp">Prestamos</a>
 						<a class="btn btn-dark" href="clienteInfo.jsp">Informacion Personal</a>					
 					</div> 		
