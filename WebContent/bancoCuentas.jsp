@@ -5,8 +5,7 @@
 
 <jsp:body>    
 
-<h4> cuentas</h4>
-
+<h4>Cuentas</h4>
 
 <div class=".container-sm" style="width: 90%"> 
 <form>
