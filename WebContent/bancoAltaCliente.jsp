@@ -9,7 +9,8 @@
 	<h4>Alta cliente</h4>
 	
 	
-<div class=".container-sm" style="width: 90%"> 
+<div class=".container-sm" style="width: 90%">
+ 
 <form>
 
   <div class="form-row">
@@ -68,11 +69,10 @@
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="radio" name="sexo" id="Masculino" required>
-      <label class="form-check-label" for="Masculino">Masculino</label>
-      <br>
-      <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
-      <label class="form-check-label" for="Femenino">Femenino</label>
+      <label class="form-check-label" for="Masculino">Masculino</label> 
       <br> 
+      <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
+      <label class="form-check-label" for="Femenino">Femenino</label> 
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Aceptar</button>

@@ -8,24 +8,45 @@
 <h4>Solicitudes</h4> 
  
 <div class="container table-responsive-md">  
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Filtro solicitudes
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Completas</a>
-	    <a class="dropdown-item" href="?ca">Activas</a>
-	    <a class="dropdown-item" href="?cc">Pendientes</a>
-	    <a class="dropdown-item" href="?cc">Rechazadas</a>
-	    <a class="dropdown-item" href="?cc">Canceladas</a> 
-	   <h5>Filtro fechas desde/hasta - busqueda cliente/solicitud</h5>
-	  </div>
-	  
-	</div> 
-	
+
+	 <div class="row">
+		 <div class="col">
+			 <label for="cliente">Busqueda cliente</label> 
+				<div class="busquedaForm">	
+					<form class="formBusqueda"  style="display:flex;" action="">
+					     <input type="text" class="form-control col-md-5" placeholder="cliente">	     
+						 <input type="submit" class="btn btn-primary" value="Buscar"  style="margin-left: 10px;">
+					</form>
+				</div>
+		</div> 
+		<div class="col">
+			 <label for="cliente">Fecha desde-hasta</label> 
+				<div class="busquedaForm"  >	
+					<form class="formBusqueda"  style="display:flex;" action="">
+					     <input type="text" class="form-control col-md-4" placeholder="desde">
+					     <input type="text" class="form-control col-md-4" placeholder="hasta">	     
+						 <input type="submit" class="btn btn-primary" value="Buscar"  style="margin-left: 10px;">
+					</form>
+				</div>
+		</div>
+		 <div class="col">
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Filtro solicitudes
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="?ca">Completas</a>
+			    <a class="dropdown-item" href="?ca">Activas</a>
+			    <a class="dropdown-item" href="?cc">Pendientes</a>
+			    <a class="dropdown-item" href="?cc">Rechazadas</a>
+			    <a class="dropdown-item" href="?cc">Canceladas</a>  
+			  </div> 
+			</div> 
+		</div>
+	</div>
 	
 	<br> 
-	<h5>crear scroll a la lista</h5>
+	<h5>Paginacion</h5>
 	<table class="table table-sm table-hover table-bordered">
 	  <thead>
 	    <tr>
@@ -71,6 +92,13 @@
 	    </tr>
 	  </tbody>
 	</table>
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination"> 
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item"><a class="page-link" href="#">2</a></li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li> 
+	  </ul>
+	</nav>
 </div> 
 </jsp:body>
 </t:masterBanco>
