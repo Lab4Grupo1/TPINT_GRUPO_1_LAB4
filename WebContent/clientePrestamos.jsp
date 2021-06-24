@@ -24,10 +24,7 @@
       <br>
       <label for="CantidadCuotas">"coutas"x"montos"</label>
     </div>
-    <div class="col-md-10 mb-3">
-      <label for="Motivo">Motivo</label>
-      <input type="text" class="form-control" id="Motivo" placeholder="Motivo" required>
-    </div>
+    
   </div>
   <div class="dropdown">
 	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,9 +39,7 @@
 	<br>
    
   <button class="btn btn-primary" type="submit">Aceptar</button>
-  <button class="btn btn-primary" type="submit">Cancelar</button>
-  <button class="btn btn-primary" type="submit">Mis prestamos</button>
-  <a href="clienteMisPrestamos.jsp" > Ir a mis prestamos</a>
+  <button class="btn btn-primary" type="submit">Cancelar</button> 
 </form>
 </div> 
 

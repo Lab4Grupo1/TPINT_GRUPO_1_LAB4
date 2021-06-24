@@ -8,11 +8,11 @@
 <h4>Gestion Solicitudes</h4>  
 
 
-<h4>Monto pedido input</h4>
-<h4>Generar cuotas dropdown</h4> 
 
- 
-	
+<h4>Numero solicitud</h4>
+<h4>Numero cliente</h4>
+<h4>Monto pedido input</h4>
+<h4>Cuotas pedidas</h4>	
 	
   <button class="btn btn-primary" type="submit">Autorizar</button>
   <button class="btn btn-primary" type="submit">Rechazar</button>

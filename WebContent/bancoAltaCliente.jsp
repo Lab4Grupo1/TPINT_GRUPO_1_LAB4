@@ -9,7 +9,8 @@
 	<h4>Alta cliente</h4>
 	
 	
-<div class=".container-sm" style="width: 90%"> 
+<div class=".container-sm" style="width: 90%">
+ 
 <form>
 
   <div class="form-row">
@@ -52,6 +53,10 @@
       <label for="Provincia">Provincia</label>
       <input type="text" class="form-control" id="Provincia" placeholder="Provincia" required>
     </div>
+    <div class="col-md-3 mb-3">
+      <label for="Nacionalidad">Nacionalidad CON DROPDOWN</label>
+      <input type="text" class="form-control" id="Nacionalidad" placeholder="Nacionalidad" required>
+    </div>
 </div>
     
   <div class="form-row">
@@ -68,11 +73,10 @@
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="radio" name="sexo" id="Masculino" required>
-      <label class="form-check-label" for="Masculino">Masculino</label>
-      <br>
-      <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
-      <label class="form-check-label" for="Femenino">Femenino</label>
+      <label class="form-check-label" for="Masculino">Masculino</label> 
       <br> 
+      <input class="form-check-input" type="radio" name="sexo" id="Femenino" required>
+      <label class="form-check-label" for="Femenino">Femenino</label> 
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Aceptar</button>
