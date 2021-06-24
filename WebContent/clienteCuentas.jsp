@@ -21,8 +21,7 @@
 	</div> 
 	
 	
-	<br> 
-	<h5>crear scroll a la lista</h5>
+	<br>  
 	<table class="table table-sm table-hover table-bordered">
 	  <thead>
 	    <tr>
@@ -64,6 +63,13 @@
 	    </tr>
 	  </tbody>
 	</table>
+		<nav aria-label="Page navigation example">
+	  <ul class="pagination"> 
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item"><a class="page-link" href="#">2</a></li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li> 
+	  </ul>
+	</nav>
 </div> 
 	
 </jsp:body>

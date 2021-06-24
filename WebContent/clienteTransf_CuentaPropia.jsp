@@ -11,8 +11,7 @@
 	    <li class="page-item active" aria-current="page">
 	      <span class="page-link">  Cuenta Propia  </span>
 	    </li>
-	    <li class="page-item"><a class="page-link" href="clienteTransf_Terceros.jsp">  Terceros  </a></li>
-	    <li class="page-item"><a class="page-link" href="clienteTransf_Agenda.jsp">  Agenda  </a></li>
+	    <li class="page-item"><a class="page-link" href="clienteTransf_Terceros.jsp">  Terceros  </a></li> 
 	  </ul>
 	</nav>
 	
@@ -41,6 +40,9 @@
 	    <a class="dropdown-item" href="?cc">Canceladas</a>  
 	  </div> 
 	</div> 
+	
+	<h1>monto </h1>
+	<h1>Aceptar - Cancelar</h1>
    
 </jsp:body>
 </t:masterCliente>

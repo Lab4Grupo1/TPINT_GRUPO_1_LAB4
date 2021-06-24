@@ -11,8 +11,7 @@
 	    <li class="page-item"><a class="page-link" href="clienteTransf_CuentaPropia.jsp">  Cuenta Propia  </a></li>
 	    <li class="page-item active" aria-current="page">
 	      <span class="page-link">  Terceros  </span>
-	    </li>
-	    <li class="page-item"><a class="page-link" href="clienteTransf_Agenda.jsp">  Agenda  </a></li>
+	    </li> 
 	  </ul>
 	</nav>
 	
