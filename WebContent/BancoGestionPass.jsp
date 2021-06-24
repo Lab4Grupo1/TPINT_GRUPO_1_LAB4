@@ -10,8 +10,7 @@
 <form>
 
   <div class="form-row">
-    <div class="col-md-5 mb-3">
-    <h5>jugar con  style="display: none"</h5>
+    <div class="col-md-5 mb-3"> 
       <label for="AntiguaPass">Antigua Contraseña</label>
       <input id="AntiguaPass" type="password" class="form-control" id="AntiguaPass" placeholder="Antigua Contraseña" required>
     </div>   

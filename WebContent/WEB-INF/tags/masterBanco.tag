@@ -36,8 +36,7 @@
 						<a class="btn btn-dark" href="bancoModificarCliente.jsp">Modificacion</a>
 						<a class="btn btn-dark" href="bancoBajaCliente.jsp">Baja</a> 
 						<a class="btn btn-dark" href="bancoCuentas.jsp">Cuentas</a> 
-						<a class="btn btn-dark" href="bancoInformes.jsp">Informes</a>
-						<a class="btn btn-dark" href="BancoGestionPass.jsp">PruebaPASS</a>
+						<a class="btn btn-dark" href="bancoInformes.jsp">Informes</a> 
 					</div>
 				</div>
 				<div class="row row-sesion">

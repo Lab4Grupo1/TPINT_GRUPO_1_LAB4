@@ -5,32 +5,28 @@
 
 <jsp:body>
 <h4>Informacion Personal</h4>
-
  
-
-<ol class="list-group list-group-numbered">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Subheading</div>
-      Cras justo odio
-    </div>
-    <span class="badge bg-primary rounded-pill">14</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Subheading</div>
-      Cras justo odio
-    </div>
-    <span class="badge bg-primary rounded-pill">14</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Subheading</div>
-      Cras justo odio
-    </div>
-    <span class="badge bg-primary rounded-pill">14</span>
-  </li>
-</ol> 
+		<br>
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    Nombre: 
+		    <span class="badge">Gaston</span>
+		  </li>
+		</ul>
+		<br> 
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    Apellido: 
+		    <span class="badge">Gonzalez</span>
+		  </li>
+		</ul>
+		<br> 
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    DNI: 
+		    <span class="badge">3542204</span>
+		  </li>
+		</ul>
 
 </jsp:body>
 </t:masterCliente>

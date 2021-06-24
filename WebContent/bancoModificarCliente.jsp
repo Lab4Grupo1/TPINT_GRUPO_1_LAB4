@@ -61,6 +61,10 @@
 	      <label for="Provincia">Provincia</label>
 	      <input type="text" class="form-control" id="Provincia" placeholder="Provincia" required>
 	    </div>
+    <div class="col-md-3 mb-3">
+      <label for="Nacionalidad">Nacionalidad</label>
+      <input type="text" class="form-control" id="Nacionalidad" placeholder="Nacionalidad" required>
+    </div>
 	</div>
 	    
 	  <div class="form-row">

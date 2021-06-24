@@ -31,8 +31,8 @@
 	    Elegir cuenta a depositar
 	  </button>
 	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Ahorro</a>
-	    <a class="dropdown-item" href="?ca">Caja</a>
+		    <a class="dropdown-item" href="?ca">Caja de Ahorro</a>
+		    <a class="dropdown-item" href="?cc">Cuenta Corriente</a>
 	  </div> 
 	</div> 
 	

@@ -3,42 +3,64 @@
 <t:masterBanco>
 	<jsp:attribute name="header">Informes de Clientes</jsp:attribute>
 
-	<jsp:body>
-	<h4>Informes</h4>
-	
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Tipo informes
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Administracion</a>
-	    <a class="dropdown-item" href="?ca">Clientes</a>
-	    <a class="dropdown-item" href="?cc">Prestamos</a>
-	    <a class="dropdown-item" href="?cc">Cuentas</a> 
-	  </div>
-	</div> 
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Tipo cuentas
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Administracion</a>
-	    <a class="dropdown-item" href="?ca">Clientes</a>
-	    <a class="dropdown-item" href="?cc">Prestamos</a>
-	    <a class="dropdown-item" href="?cc">Cuentas</a> 
-	  </div>
-	</div> 
-		
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Tipo Prestamos
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Administracion</a>
-	    <a class="dropdown-item" href="?ca">Clientes</a>
-	    <a class="dropdown-item" href="?cc">Prestamos</a>
-	    <a class="dropdown-item" href="?cc">Cuentas</a> 
-	  </div>
-	</div> 
-    </jsp:body>
+<jsp:body>
+ 
+			<h5>Informes Usuarios</h5> 
+			<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+			    Administradores 
+			    <span class="badge">14</span>
+			  </li>
+			</ul>
+			<br> 
+			<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+			    Clientes 
+			    <span class="badge">14</span>
+			  </li>
+			</ul> 
+
+<br>
+		<h5>Informes Prestamos</h5>  
+		<br>
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    Pendiente 
+		    <span class="badge">14</span>
+		  </li>
+		</ul>
+		<br> 
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    Rechazado 
+		    <span class="badge">14</span>
+		  </li>
+		</ul>
+		<br> 
+		<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+		    Aceptados 
+		    <span class="badge">14</span>
+		  </li>
+		</ul>
+	 
+
+
+<br>
+<h5>Informes Cuentas</h5> 
+			<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+			    Caja de Ahorro 
+			    <span class="badge">14</span>
+			  </li>
+			</ul>
+			<br> 
+			<ul class="list-group">
+			  <li class="list-group-item col-md-4">
+			    Cuenta Corriente 
+			    <span class="badge">14</span>
+			  </li>
+			</ul> 
+
+</jsp:body>
 </t:masterBanco>
