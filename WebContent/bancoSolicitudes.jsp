@@ -35,11 +35,9 @@
 			    Filtro solicitudes
 			  </button>
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			    <a class="dropdown-item" href="?ca">Completas</a>
-			    <a class="dropdown-item" href="?ca">Activas</a>
+			    <a class="dropdown-item" href="?ca">Completas</a> 
 			    <a class="dropdown-item" href="?cc">Pendientes</a>
-			    <a class="dropdown-item" href="?cc">Rechazadas</a>
-			    <a class="dropdown-item" href="?cc">Canceladas</a>  
+			    <a class="dropdown-item" href="?cc">Rechazadas</a>  
 			  </div> 
 			</div> 
 		</div>

@@ -7,12 +7,37 @@
 
 <h4>Gestion Solicitudes</h4>  
 
-
-
-<h4>Numero solicitud</h4>
-<h4>Numero cliente</h4>
-<h4>Monto pedido input</h4>
-<h4>Cuotas pedidas</h4>	
+<br>
+ 
+<ul class="list-group">
+  <li class="list-group-item col-md-4">
+    Numero solicitud 
+    <span class="badge">14</span>
+  </li>
+</ul>
+<br> 
+<ul class="list-group">
+  <li class="list-group-item col-md-4">
+    Numero cliente 
+    <span class="badge">14</span>
+  </li>
+</ul> 
+<br> 
+<ul class="list-group">
+  <li class="list-group-item col-md-4">
+    Monto pedido 
+    <span class="badge">14</span>
+  </li>
+</ul> 
+<br> 
+<ul class="list-group">
+  <li class="list-group-item col-md-4">
+    Cuotas pedidas 
+    <span class="badge">14</span>
+  </li>
+</ul> 
+<br> 
+	
 	
   <button class="btn btn-primary" type="submit">Autorizar</button>
   <button class="btn btn-primary" type="submit">Rechazar</button>
