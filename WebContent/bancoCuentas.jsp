@@ -72,6 +72,7 @@
 	 <br>
 	  <button class="btn btn-primary" type="submit">Aceptar</button>
 	  <button class="btn btn-primary" type="submit">Modificar</button>
+	  <button class="btn btn-primary" type="submit">Dar de baja</button>
 	  <button class="btn btn-primary" type="submit">Cancelar</button>
 	</form>
 </div> 
