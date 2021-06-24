@@ -6,14 +6,26 @@ public class Cuentas {
 	
 	private int NumeroCuenta;
 	private String Cbu;
-	private int IdTipoCuenta;
-	private int IdMovimiento;
+	private TipoCuentas TipoCuenta;
+	private TipoMovimiento Movimiento;
 	private int DniCliente;
 	private Date FechaCreacion;
 	private float Saldo;
 	private boolean Estado;
 	
 	
+	public Cuentas(int numeroCuenta, String cbu, TipoCuentas tipoCuenta, TipoMovimiento movimiento, int dniCliente,
+			Date fechaCreacion, float saldo, boolean estado) {
+		super();
+		NumeroCuenta = numeroCuenta;
+		Cbu = cbu;
+		TipoCuenta = tipoCuenta;
+		Movimiento = movimiento;
+		DniCliente = dniCliente;
+		FechaCreacion = fechaCreacion;
+		Saldo = saldo;
+		Estado = estado;
+	}
 	public int getNumeroCuenta() {
 		return NumeroCuenta;
 	}
@@ -26,18 +38,20 @@ public class Cuentas {
 	public void setCbu(String cbu) {
 		Cbu = cbu;
 	}
-	public int getIdTipoCuenta() {
-		return IdTipoCuenta;
+	
+	public TipoCuentas getTipoCuenta() {
+		return TipoCuenta;
 	}
-	public void setIdTipoCuenta(int idTipoCuenta) {
-		IdTipoCuenta = idTipoCuenta;
+	public void setTipoCuenta(TipoCuentas tipoCuenta) {
+		TipoCuenta = tipoCuenta;
 	}
-	public int getIdMovimiento() {
-		return IdMovimiento;
+	public TipoMovimiento getMovimiento() {
+		return Movimiento;
 	}
-	public void setIdMovimiento(int idMovimiento) {
-		IdMovimiento = idMovimiento;
+	public void setMovimiento(TipoMovimiento movimiento) {
+		Movimiento = movimiento;
 	}
+
 	public int getDniCliente() {
 		return DniCliente;
 	}

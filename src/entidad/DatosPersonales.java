@@ -2,17 +2,33 @@ package entidad;
 
 public class DatosPersonales {
 	
+	public DatosPersonales(int dni, int cuil, String nombre, String apellido, String sexo,
+			entidad.Nacionalidad nacionalidad, String direccion, String localidad, String provincia, String mail,
+			Telefonos telefono) {
+		super();
+		Dni = dni;
+		Cuil = cuil;
+		Nombre = nombre;
+		Apellido = apellido;
+		Sexo = sexo;
+		Nacionalidad = nacionalidad;
+		Direccion = direccion;
+		Localidad = localidad;
+		Provincia = provincia;
+		Mail = mail;
+		Telefono = telefono;
+	}
 	private int Dni;
 	private int Cuil;
 	private String Nombre;
 	private String Apellido;
 	private String Sexo;
-	private int IdNacionalidad;
+	private Nacionalidad Nacionalidad;
 	private String Direccion;
 	private String Localidad;
 	private String Provincia;
 	private String Mail;
-	private int IdTelefono;
+	private Telefonos Telefono;
 	
 	
 	public int getDni() {
@@ -33,6 +49,15 @@ public class DatosPersonales {
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+	
+	
+	
+	public Nacionalidad getNacionalidad() {
+		return Nacionalidad;
+	}
+	public void setNacionalidad(Nacionalidad nacionalidad) {
+		Nacionalidad = nacionalidad;
+	}
 	public String getApellido() {
 		return Apellido;
 	}
@@ -45,12 +70,7 @@ public class DatosPersonales {
 	public void setSexo(String sexo) {
 		Sexo = sexo;
 	}
-	public int getIdNacionalidad() {
-		return IdNacionalidad;
-	}
-	public void setIdNacionalidad(int idNacionalidad) {
-		IdNacionalidad = idNacionalidad;
-	}
+
 	public String getDireccion() {
 		return Direccion;
 	}
@@ -75,12 +95,13 @@ public class DatosPersonales {
 	public void setMail(String mail) {
 		Mail = mail;
 	}
-	public int getIdTelefono() {
-		return IdTelefono;
+	public Telefonos getTelefono() {
+		return Telefono;
 	}
-	public void setIdTelefono(int idTelefono) {
-		IdTelefono = idTelefono;
+	public void setTelefono(Telefonos telefono) {
+		Telefono = telefono;
 	}
+	
 	
 	
 	
