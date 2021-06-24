@@ -6,6 +6,8 @@
 <jsp:body>
 	<h4>Transferencias - Terceros</h4>
 	
+
+<div class=".container">
 	<nav aria-label="Page navigation example">
 	  <ul class="pagination pagination-sm">
 	    <li class="page-item"><a class="page-link" href="clienteTransf_CuentaPropia.jsp">  Cuenta Propia  </a></li>
@@ -15,31 +17,45 @@
 	  </ul>
 	</nav>
 	
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Desde
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Ahorro</a>
-	    <a class="dropdown-item" href="?ca">Caja</a>
-	    <a class="dropdown-item" href="?cc">Pendientes</a>
-	    <a class="dropdown-item" href="?cc">Rechazadas</a>
-	    <a class="dropdown-item" href="?cc">Canceladas</a>  
-	  </div> 
-	</div> 
+	<div class="row" style="width: 500px">
+		<div class="col">
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Desde cuenta
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="?ca">Ahorro</a>
+			    <a class="dropdown-item" href="?ca">Caja</a>
+			    <a class="dropdown-item" href="?cc">Pendientes</a>
+			    <a class="dropdown-item" href="?cc">Rechazadas</a>
+			    <a class="dropdown-item" href="?cc">Canceladas</a>  
+			  </div> 
+			</div> 
+		</div>
+		<div class="col">
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Hacia cuenta
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="?ca">Ahorro</a>
+			    <a class="dropdown-item" href="?ca">Caja</a>
+			    <a class="dropdown-item" href="?cc">Pendientes</a>
+			    <a class="dropdown-item" href="?cc">Rechazadas</a>
+			    <a class="dropdown-item" href="?cc">Canceladas</a>  
+			  </div> 
+			</div> 
+		</div>
+	</div>  
+	 
 	<br>
-	<div class="dropdown">
-	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Hacia
-	  </button>
-	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Ahorro</a>
-	    <a class="dropdown-item" href="?ca">Caja</a>
-	    <a class="dropdown-item" href="?cc">Pendientes</a>
-	    <a class="dropdown-item" href="?cc">Rechazadas</a>
-	    <a class="dropdown-item" href="?cc">Canceladas</a>  
-	  </div> 
-	</div> 
+      <label for="CBU">CBU</label>
+	      <input type="text" class="form-control col-md-3" placeholder="CBU" required>
+ 
+	<br>
+  <button class="btn btn-primary" type="submit">Aceptar</button>
+  <button class="btn btn-primary" type="submit">Cancelar</button>
+</div>
    
 </jsp:body>
 </t:masterCliente>

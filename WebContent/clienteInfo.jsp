@@ -6,8 +6,7 @@
 <jsp:body>
 <h4>Informacion Personal</h4>
 
-
-<h1>opcion 2</h1>
+ 
 
 <ol class="list-group list-group-numbered">
   <li class="list-group-item d-flex justify-content-between align-items-start">

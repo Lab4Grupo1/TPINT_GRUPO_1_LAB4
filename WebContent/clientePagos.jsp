@@ -9,8 +9,7 @@
 
 <div class=".container table-responsive-md">  
 	 
-	<br> 
-	<h5>crear scroll a la lista</h5>
+	<br>  
 	<table class="table table-sm table-hover table-bordered">
 	  <thead>
 	    <tr>
@@ -26,28 +25,28 @@
 	      <th scope="row">1</th>
 	      <td>Prestamo</td>
 	      <td>Pendiente</td> 
-	      <td>1213</td>
+	      <td>09/12/2018</td>
 	      <td><a href="clientePagos.jsp" class="btn btn-primary"  role="button" aria-disabled="true">Pagar</a></td>
 	    </tr>
 	    <tr>
 	      <th scope="row">1</th>
 	      <td>Prestamo</td>
 	      <td>Pendiente</td> 
-	      <td>123</td>
+	      <td>09/12/2018</td>
 	      <td><a href="clientePagos.jsp" class="btn btn-primary"  role="button" aria-disabled="true">Pagar</a></td>
 	    </tr>
 	    <tr>
 	      <th scope="row">1</th>
 	      <td>Prestamo</td>
 	      <td>Pendiente</td> 
-	      <td>123</td>
+	      <td>09/12/2018</td>
 	      <td><a href="clientePagos.jsp" class="btn btn-primary"  role="button" aria-disabled="true">Pagar</a></td>
 	    </tr>
 	    <tr>
 	      <th scope="row">1</th>
 	      <td>Prestamo</td>
 	      <td>Pendiente</td> 
-	      <td>123</td>
+	      <td>09/12/2018</td>
 	      <td><a href="clientePagos.jsp" class="btn btn-primary"  role="button" aria-disabled="true">Pagar</a></td>
 	    </tr>
 	  </tbody>

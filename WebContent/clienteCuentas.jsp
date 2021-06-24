@@ -12,11 +12,8 @@
 	    Elegir cuenta
 	  </button>
 	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	    <a class="dropdown-item" href="?ca">Ahorro</a>
-	    <a class="dropdown-item" href="?ca">Caja</a>
-	    <a class="dropdown-item" href="?cc">Pendientes</a>
-	    <a class="dropdown-item" href="?cc">Rechazadas</a>
-	    <a class="dropdown-item" href="?cc">Canceladas</a>  
+	    <a class="dropdown-item" href="?ca">Caja de ahorro</a>
+	    <a class="dropdown-item" href="?ca">Cuenta corriente</a>  
 	  </div> 
 	</div> 
 	
