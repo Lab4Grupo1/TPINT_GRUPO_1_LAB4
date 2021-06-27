@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `tpint_grupo1_lab4` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `tpint_grupo1_lab4`;
+CREATE DATABASE  IF NOT EXISTS `tpint_grupo1` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `tpint_grupo1`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: tpint_grupo1_lab4
+-- Host: 127.0.0.1    Database: tpint_grupo1
 -- ------------------------------------------------------
 -- Server version	8.0.25
 
@@ -25,21 +25,21 @@ DROP TABLE IF EXISTS `cuentas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cuentas` (
-  `NumeroCuenta` int NOT NULL,
+  `NumeroCuenta` int NOT NULL AUTO_INCREMENT,
   `Cbu` varchar(45) NOT NULL,
-  `FK_IdTipoCuenta` int NOT NULL,
-  `FK_IdMovimiento` int NOT NULL,
+  `FechaCreacion` date DEFAULT NULL,
+  `Saldo` decimal(10,0) DEFAULT NULL,
+  `Estado` tinyint DEFAULT NULL,
+  `FK_idTipoCuenta` int NOT NULL,
+  `FK_idMovimiento` int NOT NULL,
   `FK_DniCliente` int NOT NULL,
-  `FechaCreacion` date NOT NULL,
-  `Saldo` decimal(10,0) NOT NULL,
-  `Estado` tinyint NOT NULL,
   PRIMARY KEY (`NumeroCuenta`,`Cbu`),
-  KEY `FK_IdTipoCuenta_idx` (`FK_IdTipoCuenta`),
-  KEY `FK_IdMovimiento_idx` (`FK_IdMovimiento`),
+  KEY `FK_idTipoCuenta_idx` (`FK_idTipoCuenta`),
+  KEY `FK_idMovimiento_idx` (`FK_idMovimiento`),
   KEY `FK_DniCliente_idx` (`FK_DniCliente`),
   CONSTRAINT `FK_DniCliente` FOREIGN KEY (`FK_DniCliente`) REFERENCES `datospersonales` (`Dni`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_IdMovimiento` FOREIGN KEY (`FK_IdMovimiento`) REFERENCES `movimientos` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_IdTipoCuenta` FOREIGN KEY (`FK_IdTipoCuenta`) REFERENCES `tipocuentas` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_idMovimiento` FOREIGN KEY (`FK_idMovimiento`) REFERENCES `movimientos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_idTipoCuenta` FOREIGN KEY (`FK_idTipoCuenta`) REFERENCES `tipocuenta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,18 +65,18 @@ CREATE TABLE `datospersonales` (
   `Nombre` varchar(45) DEFAULT NULL,
   `Apellido` varchar(45) DEFAULT NULL,
   `Sexo` varchar(45) DEFAULT NULL,
-  `FK_Nacionalidad` int DEFAULT NULL,
   `FechaNacimiento` date DEFAULT NULL,
   `Direccion` varchar(45) DEFAULT NULL,
   `Localidad` varchar(45) DEFAULT NULL,
   `Provincia` varchar(45) DEFAULT NULL,
   `Mail` varchar(45) DEFAULT NULL,
-  `FK_IdTelefono` int DEFAULT NULL,
+  `FK_Nacionalidad` int NOT NULL,
+  `FK_idTelefono` int NOT NULL,
   PRIMARY KEY (`Dni`),
-  KEY `FK_IdNacionalidad_idx` (`FK_Nacionalidad`),
-  KEY `FK_IdTelefono_idx` (`FK_IdTelefono`),
-  CONSTRAINT `FK_IdNacionalidad` FOREIGN KEY (`FK_Nacionalidad`) REFERENCES `nacionalidad` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_IdTelefono` FOREIGN KEY (`FK_IdTelefono`) REFERENCES `telefonos` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_Nacionalidad_idx` (`FK_Nacionalidad`),
+  KEY `FK_idTelefono_idx` (`FK_idTelefono`),
+  CONSTRAINT `FK_idTelefono` FOREIGN KEY (`FK_idTelefono`) REFERENCES `telefonos` (`idTelefonos`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_Nacionalidad` FOREIGN KEY (`FK_Nacionalidad`) REFERENCES `nacionalidad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -97,14 +97,14 @@ DROP TABLE IF EXISTS `movimientos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `movimientos` (
-  `Id` int NOT NULL,
-  `FK_IdTipoMovimiento` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Detalle` varchar(45) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
   `Importe` decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (`Id`),
+  `FK_IdTipoMovimiento` int NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `FK_IdTipoMovimiento_idx` (`FK_IdTipoMovimiento`),
-  CONSTRAINT `FK_IdTipoMovimiento` FOREIGN KEY (`FK_IdTipoMovimiento`) REFERENCES `tipomovimiento` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_IdTipoMovimiento` FOREIGN KEY (`FK_IdTipoMovimiento`) REFERENCES `tipomovimiento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -125,9 +125,9 @@ DROP TABLE IF EXISTS `nacionalidad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `nacionalidad` (
-  `Id` int NOT NULL,
-  `Nacionalidad` varchar(45) NOT NULL,
-  PRIMARY KEY (`Id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Nacionalidad` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,6 +141,36 @@ LOCK TABLES `nacionalidad` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `prestamos`
+--
+
+DROP TABLE IF EXISTS `prestamos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `prestamos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cuotas pagas` int DEFAULT NULL,
+  `cuotas total` int DEFAULT NULL,
+  `importeCuota` decimal(10,0) DEFAULT NULL,
+  `importePedido` decimal(10,0) DEFAULT NULL,
+  `FechaUltimoPago` date DEFAULT NULL,
+  `FK_NumeroCuenta` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_NumeroCuenta_idx` (`FK_NumeroCuenta`),
+  CONSTRAINT `FK_NumeroCuenta` FOREIGN KEY (`FK_NumeroCuenta`) REFERENCES `cuentas` (`NumeroCuenta`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prestamos`
+--
+
+LOCK TABLES `prestamos` WRITE;
+/*!40000 ALTER TABLE `prestamos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `prestamos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `rol`
 --
 
@@ -148,10 +178,10 @@ DROP TABLE IF EXISTS `rol`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rol` (
-  `Id` int NOT NULL,
-  `Descripcion` varchar(45) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Descripcion` varchar(45) DEFAULT NULL,
   `Estado` tinyint NOT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -165,6 +195,34 @@ LOCK TABLES `rol` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `solicitud`
+--
+
+DROP TABLE IF EXISTS `solicitud`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `solicitud` (
+  `idSolicitud` int NOT NULL AUTO_INCREMENT,
+  `FK_NCuenta` int NOT NULL,
+  `Montosolicitado` decimal(10,0) DEFAULT NULL,
+  `CantCuotasSolicitadas` int DEFAULT NULL,
+  `EstadoSolicitud` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idSolicitud`),
+  KEY `FK_NumeroCuenta_idx` (`FK_NCuenta`),
+  CONSTRAINT `FK_NCuenta` FOREIGN KEY (`FK_NCuenta`) REFERENCES `cuentas` (`NumeroCuenta`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `solicitud`
+--
+
+LOCK TABLES `solicitud` WRITE;
+/*!40000 ALTER TABLE `solicitud` DISABLE KEYS */;
+/*!40000 ALTER TABLE `solicitud` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `telefonos`
 --
 
@@ -172,12 +230,12 @@ DROP TABLE IF EXISTS `telefonos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `telefonos` (
-  `Id` int NOT NULL,
-  `FK_IdTipo` int DEFAULT NULL,
+  `idTelefonos` int NOT NULL AUTO_INCREMENT,
   `Numero` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `FK_IdTipo_idx` (`FK_IdTipo`),
-  CONSTRAINT `FK_IdTipo` FOREIGN KEY (`FK_IdTipo`) REFERENCES `tipotelefono` (`IdTipo`) ON DELETE CASCADE ON UPDATE CASCADE
+  `FK_idTipo` int NOT NULL,
+  PRIMARY KEY (`idTelefonos`),
+  KEY `FK_idTipo_idx` (`FK_idTipo`),
+  CONSTRAINT `FK_idTipo` FOREIGN KEY (`FK_idTipo`) REFERENCES `tipotelefono` (`idTipo`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -191,26 +249,26 @@ LOCK TABLES `telefonos` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tipocuentas`
+-- Table structure for table `tipocuenta`
 --
 
-DROP TABLE IF EXISTS `tipocuentas`;
+DROP TABLE IF EXISTS `tipocuenta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tipocuentas` (
-  `Id` int NOT NULL,
+CREATE TABLE `tipocuenta` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipocuentas`
+-- Dumping data for table `tipocuenta`
 --
 
-LOCK TABLES `tipocuentas` WRITE;
-/*!40000 ALTER TABLE `tipocuentas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tipocuentas` ENABLE KEYS */;
+LOCK TABLES `tipocuenta` WRITE;
+/*!40000 ALTER TABLE `tipocuenta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tipocuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -221,9 +279,9 @@ DROP TABLE IF EXISTS `tipomovimiento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tipomovimiento` (
-  `Id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -244,9 +302,9 @@ DROP TABLE IF EXISTS `tipotelefono`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tipotelefono` (
-  `IdTipo` int NOT NULL,
+  `idTipo` int NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`IdTipo`)
+  PRIMARY KEY (`idTipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -267,17 +325,17 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `Id` int NOT NULL,
-  `NombreUsuario` varchar(45) NOT NULL,
-  `Contraseña` varchar(45) NOT NULL,
-  `FK_IdRol` int NOT NULL,
-  `FK_DniDp` int NOT NULL,
-  `Estado` tinyint NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `IdRol_idx` (`FK_IdRol`),
-  KEY `FK_DniDp_idx` (`FK_DniDp`),
-  CONSTRAINT `FK_DniDp` FOREIGN KEY (`FK_DniDp`) REFERENCES `datospersonales` (`Dni`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_IdRol` FOREIGN KEY (`FK_IdRol`) REFERENCES `rol` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `id` int NOT NULL AUTO_INCREMENT,
+  `NombreUsuario` varchar(45) DEFAULT NULL,
+  `Contraseña` varchar(45) DEFAULT NULL,
+  `FK_idRol` int NOT NULL,
+  `FK_DniDP` int NOT NULL,
+  `Estado` tinyint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_idRol_idx` (`FK_idRol`),
+  KEY `FK_DniDP_idx` (`FK_DniDP`),
+  CONSTRAINT `FK_DniDP` FOREIGN KEY (`FK_DniDP`) REFERENCES `datospersonales` (`Dni`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_idRol` FOREIGN KEY (`FK_idRol`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -299,4 +357,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-21 16:05:44
+-- Dump completed on 2021-06-27  4:18:15
