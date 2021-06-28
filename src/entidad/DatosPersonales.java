@@ -1,11 +1,12 @@
 package entidad;
 
+import java.sql.Date;
+
 public class DatosPersonales {
 	
 	public DatosPersonales(int dni, int cuil, String nombre, String apellido, String sexo,
 			entidad.Nacionalidad nacionalidad, String direccion, String localidad, String provincia, String mail,
-			Telefonos telefono) {
-		super();
+			Telefonos telefono) { 
 		Dni = dni;
 		Cuil = cuil;
 		Nombre = nombre;
@@ -18,12 +19,15 @@ public class DatosPersonales {
 		Mail = mail;
 		Telefono = telefono;
 	}
+	
+	public DatosPersonales() {};
 	private int Dni;
 	private int Cuil;
 	private String Nombre;
 	private String Apellido;
 	private String Sexo;
 	private Nacionalidad Nacionalidad;
+	private Date FechaNacimiento;
 	private String Direccion;
 	private String Localidad;
 	private String Provincia;
@@ -92,6 +96,14 @@ public class DatosPersonales {
 	public String getMail() {
 		return Mail;
 	}
+	public Date getFechaNacimiento() {
+		return FechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		FechaNacimiento = fechaNacimiento;
+	}
+
 	public void setMail(String mail) {
 		Mail = mail;
 	}
