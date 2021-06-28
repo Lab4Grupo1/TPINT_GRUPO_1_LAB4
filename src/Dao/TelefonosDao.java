@@ -1,8 +1,13 @@
 package Dao; 
-import entidad.Telefonos;
+import java.util.List;
+
+import entidad.Telefonos; 
  
 
 public interface TelefonosDao { 
-	public boolean insert(Telefonos usuario);
+	public int insert(Telefonos usuario);
+	public int update(Telefonos usuario);
+
+	public List<Telefonos> readAll();
 
 }

@@ -8,37 +8,37 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import Dao.TiposMovimientoDao; 
-import entidad.TipoMovimiento;
+import Dao.NacionalidadDao;
+import entidad.Nacionalidad; 
 
-public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
+public class NacionalidadDaoImpl implements NacionalidadDao {
 
 	private String host = "jdbc:mysql://localhost:3006/";
 	private String user = "root";
 	private String pass = "root";
 	private String dbName = "TPInt_GRUPO1_V2";
 	
-	public List<TipoMovimiento> readAll(){
+	public List<Nacionalidad> readAll(){
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
-		ArrayList<TipoMovimiento> Tmovimiento = new ArrayList<TipoMovimiento>();
+		ArrayList<Nacionalidad> Nacionalidad = new ArrayList<Nacionalidad>();
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection( host+dbName, user , pass);
 			Statement st =   conn.createStatement();
 			
-			ResultSet rs = st.executeQuery(" SELECT id, descripcion FROM tipomovimiento;");
+			ResultSet rs = st.executeQuery(" SELECT id, Nacionalidad FROM Nacionalidad;");
 			
 			while(rs.next()){
 				
-				TipoMovimiento TmovimientoRs = new TipoMovimiento();
-				TmovimientoRs.setDescripcion(rs.getString("descripcion"));
+				Nacionalidad NacionalidadRs = new Nacionalidad(); 
+				NacionalidadRs.setNacionalidad(rs.getString("descripcion"));
 				
-				Tmovimiento.add(TmovimientoRs);
+				Nacionalidad.add(NacionalidadRs);
 				
 				
 			}
@@ -49,9 +49,7 @@ public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
 		}finally {
 			
 		}
-		return Tmovimiento;
+		return Nacionalidad;
 		
 	}
-	
-	
 }

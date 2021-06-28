@@ -8,8 +8,7 @@ public class Movimientos {
 		
 	}
 	
-	public Movimientos(entidad.TipoMovimiento tipoMovimiento, String detalle, Date fecha, float importe) {
-		super();
+	public Movimientos(entidad.TipoMovimiento tipoMovimiento, String detalle, Date fecha, float importe) { 
 		TipoMovimiento = tipoMovimiento;
 		Detalle = detalle;
 		Fecha = fecha;

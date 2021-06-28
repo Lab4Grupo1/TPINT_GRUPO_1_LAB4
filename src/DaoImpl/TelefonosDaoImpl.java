@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Dao.TelefonosDao;
+import entidad.DatosPersonales;
 import entidad.Telefonos;
+import entidad.TipoCuentas;
 import entidad.Usuario;
 
 public class TelefonosDaoImpl  implements TelefonosDao{
@@ -21,7 +23,7 @@ public class TelefonosDaoImpl  implements TelefonosDao{
 	private String pass = "root";
 	private String dbName = "TPInt_GRUPO1_V2";
 	
-	public boolean insert(Telefonos tel)
+	public int insert(Telefonos tel)
 	{		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -35,7 +37,7 @@ public class TelefonosDaoImpl  implements TelefonosDao{
 		{
 			cn = DriverManager.getConnection(host+dbName, user,pass);
 			Statement st = cn.createStatement();
-			String query = "Insert into usuario (numero)  values ( " +tel.getNumero()+ ")";
+			String query = "Insert into telefono(numero)  values ( " +tel.getNumero()+ ")";
 
 		
 			filas=st.executeUpdate(query);
@@ -45,6 +47,66 @@ public class TelefonosDaoImpl  implements TelefonosDao{
 			e.printStackTrace();
 		}
 		return filas;
+	}
+	
+	public int update(Telefonos tel)
+	{		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		int filas=0;
+		Connection cn = null;
+		try
+		{
+			cn = DriverManager.getConnection(host+dbName, user,pass);
+			Statement st = cn.createStatement();
+			String query = "update Telefonos set numero = '"+ tel.getNumero()+ "'";
+
+		
+			filas=st.executeUpdate(query);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return filas;
+	}
+	
+	public List<Telefonos> readAll(){
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(ClassNotFoundException e){
+			e.printStackTrace();
+		}
+		ArrayList<Telefonos> Telefonos = new ArrayList<Telefonos>();
+		Connection conn = null;
+		try {
+			conn = DriverManager.getConnection( host+dbName, user , pass);
+			Statement st =   conn.createStatement();
+			
+			ResultSet rs = st.executeQuery(" SELECT id, numero FROM TipoCuenta;");
+			
+			while(rs.next()){
+				
+				Telefonos TelefonosRs = new Telefonos(); 
+				TelefonosRs.setNumero(rs.getString("numero")); 
+				Telefonos.add(TelefonosRs);
+				
+				
+			}
+			conn.close();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			
+		}
+		return Telefonos;
+		
 	}
 
 	 

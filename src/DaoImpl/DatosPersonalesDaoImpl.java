@@ -5,11 +5,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
- 
+import java.util.List;
+
 import entidad.DatosPersonales;
+import entidad.Nacionalidad;
 import entidad.Rol;
+import entidad.Telefonos;
+import entidad.TipoCuentas;
 
 public class DatosPersonalesDaoImpl {
 
@@ -89,7 +94,55 @@ public class DatosPersonalesDaoImpl {
 		}
 		return filas;
 	}
-	
-	 
   
+	public List<DatosPersonales> readAll(){
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(ClassNotFoundException e){
+			e.printStackTrace();
+		}
+		ArrayList<DatosPersonales> DatosPersonales = new ArrayList<DatosPersonales>();
+		Connection conn = null;
+		try {
+			conn = DriverManager.getConnection( host+dbName, user , pass);
+			Statement st =   conn.createStatement();
+			
+			ResultSet rs = st.executeQuery(" SELECT DNI, Cuil, Nombre, Apellido, sexo, FK_Nacionalidad, FechaNacimiento,"
+					+ " Direccion, Localidad, Provincia, Mail, FK_IdTelefono FROM datospersonales ;");
+			
+			while(rs.next()){ 
+				DatosPersonales DatosPersonalesRs = new DatosPersonales(); 
+				Nacionalidad NacionalidadRs = new Nacionalidad(); 
+				Telefonos TelefonoRs = new Telefonos(); 
+				
+				NacionalidadRs.setNacionalidad(rs.getString("FK_Nacionalidad"));
+				TelefonoRs.setNumero(rs.getString("FK_IdTelefono"));
+				
+				DatosPersonalesRs.setDni(rs.getInt("DNI"));
+				DatosPersonalesRs.setCuil(rs.getInt("Cuil"));
+				DatosPersonalesRs.setNombre(rs.getString("Nombre"));
+				DatosPersonalesRs.setApellido(rs.getString("Apellido"));
+				DatosPersonalesRs.setSexo(rs.getString("sexo"));
+				DatosPersonalesRs.setNacionalidad(NacionalidadRs);
+				DatosPersonalesRs.setFechaNacimiento(rs.getDate("FechaNacimiento"));
+				DatosPersonalesRs.setDireccion(rs.getString("Direccion"));
+				DatosPersonalesRs.setLocalidad(rs.getString("Localidad"));
+				DatosPersonalesRs.setProvincia(rs.getString("Provincia"));
+				DatosPersonalesRs.setMail(rs.getString("Mail"));
+				DatosPersonalesRs.setTelefono(TelefonoRs); 
+				
+				DatosPersonales.add(DatosPersonalesRs);
+				 
+			}
+			conn.close();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			
+		}
+		return DatosPersonales;
+		
+	}
 }

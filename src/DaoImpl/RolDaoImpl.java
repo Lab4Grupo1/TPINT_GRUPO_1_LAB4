@@ -8,38 +8,41 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import Dao.TiposMovimientoDao; 
-import entidad.TipoMovimiento;
+import Dao.RolDao;
+import entidad.Movimientos;
+import entidad.Rol;
 
-public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
-
+public class RolDaoImpl implements RolDao{
+	
 	private String host = "jdbc:mysql://localhost:3006/";
 	private String user = "root";
 	private String pass = "root";
 	private String dbName = "TPInt_GRUPO1_V2";
 	
-	public List<TipoMovimiento> readAll(){
+	public List<Rol> readAll(){
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
-		ArrayList<TipoMovimiento> Tmovimiento = new ArrayList<TipoMovimiento>();
+		ArrayList<Rol> rol = new ArrayList<Rol>();
 		Connection conn = null;
+		
 		try {
 			conn = DriverManager.getConnection( host+dbName, user , pass);
 			Statement st =   conn.createStatement();
 			
-			ResultSet rs = st.executeQuery(" SELECT id, descripcion FROM tipomovimiento;");
+			ResultSet rs = st.executeQuery("SELECT id, Descripcion, Estado FROM rol");
 			
 			while(rs.next()){
 				
-				TipoMovimiento TmovimientoRs = new TipoMovimiento();
-				TmovimientoRs.setDescripcion(rs.getString("descripcion"));
+				Rol rolRs = new Rol();
+				rolRs.setId(rs.getInt("id"));
+				rolRs.setDescripcion(rs.getString("Descripcion"));
+				rolRs.setEstado(rs.getBoolean("Estado"));
 				
-				Tmovimiento.add(TmovimientoRs);
-				
+				rol.add(rolRs);
 				
 			}
 			conn.close();
@@ -49,9 +52,7 @@ public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
 		}finally {
 			
 		}
-		return Tmovimiento;
+		return rol;
 		
 	}
-	
-	
 }

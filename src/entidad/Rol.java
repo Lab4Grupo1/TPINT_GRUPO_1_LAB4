@@ -1,12 +1,16 @@
 package entidad;
 
 public class Rol {
-	public Rol(String descripcion, boolean estado){ 
+	
+	public Rol() {
+		
+	}
+	
+	public Rol(String descripcion, boolean estado) {
+		super();
 		Descripcion = descripcion;
 		Estado = estado;
 	}
-	
-	public Rol(){}
 	private int Id;
 	private String Descripcion;
 	private boolean Estado;
@@ -15,13 +19,14 @@ public class Rol {
 	public int getId() {
 		return Id;
 	}
-	public String getDescripcion() {
-		return Descripcion;
-	}
+
 	public void setId(int id) {
 		Id = id;
 	}
 
+	public String getDescripcion() {
+		return Descripcion;
+	}
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}

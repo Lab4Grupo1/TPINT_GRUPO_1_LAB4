@@ -146,7 +146,6 @@ public class UsuarioDaoImpl {
 		return usuario;
 	}
 	 
-	
 	/*Procedimiento*/
     public void procedimientoInsertarUsuario(Usuario usuario)
 	   {

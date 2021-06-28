@@ -8,37 +8,37 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import Dao.TiposMovimientoDao; 
-import entidad.TipoMovimiento;
+import Dao.TipoCuentaDao; 
+import entidad.TipoCuentas; 
 
-public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
+public class TipoCuentasDaoImpl implements TipoCuentaDao {
 
 	private String host = "jdbc:mysql://localhost:3006/";
 	private String user = "root";
 	private String pass = "root";
 	private String dbName = "TPInt_GRUPO1_V2";
 	
-	public List<TipoMovimiento> readAll(){
+	public List<TipoCuentas> readAll(){
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}
-		ArrayList<TipoMovimiento> Tmovimiento = new ArrayList<TipoMovimiento>();
+		ArrayList<TipoCuentas> Tcuenta = new ArrayList<TipoCuentas>();
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection( host+dbName, user , pass);
 			Statement st =   conn.createStatement();
 			
-			ResultSet rs = st.executeQuery(" SELECT id, descripcion FROM tipomovimiento;");
+			ResultSet rs = st.executeQuery(" SELECT id, descripcion FROM TipoCuenta;");
 			
 			while(rs.next()){
 				
-				TipoMovimiento TmovimientoRs = new TipoMovimiento();
-				TmovimientoRs.setDescripcion(rs.getString("descripcion"));
+				TipoCuentas TcuentaRs = new TipoCuentas(); 
+				TcuentaRs.setDescripcion(rs.getString("descripcion"));
 				
-				Tmovimiento.add(TmovimientoRs);
+				Tcuenta.add(TcuentaRs);
 				
 				
 			}
@@ -49,7 +49,7 @@ public class TipoMovimientoDaoImpl implements TiposMovimientoDao {
 		}finally {
 			
 		}
-		return Tmovimiento;
+		return Tcuenta;
 		
 	}
 	

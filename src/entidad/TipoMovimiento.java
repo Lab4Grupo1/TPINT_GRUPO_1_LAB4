@@ -6,8 +6,7 @@ public class TipoMovimiento {
 		
 	}
 	
-	public TipoMovimiento(String descripcion) {
-		super();
+	public TipoMovimiento(String descripcion) { 
 		Descripcion = descripcion;
 	}
 
