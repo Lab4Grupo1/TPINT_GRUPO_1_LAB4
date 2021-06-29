@@ -5,6 +5,10 @@ public class Telefonos {
 		Numero = numero;
 	}
 	public Telefonos() {}
+	
+	public Telefonos(Object object, Object object2) {
+		// TODO Auto-generated constructor stub
+	}
 	private int Id; 
 	private String Numero; 
 	 

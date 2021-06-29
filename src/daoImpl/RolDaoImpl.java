@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.RolDao;
-import entidad.Movimientos;
 import entidad.Rol;
 
 public class RolDaoImpl implements RolDao{

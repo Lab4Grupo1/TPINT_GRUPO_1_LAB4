@@ -10,7 +10,6 @@ import java.util.List;
 
 import dao.MovimientosDao;
 import entidad.Movimientos;
-import entidad.Solicitud;
 
 public class MovimientosDaoImpl implements MovimientosDao {
 

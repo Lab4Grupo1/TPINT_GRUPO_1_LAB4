@@ -1,23 +1,18 @@
 package daoImpl;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import entidad.Cuentas;
 
 public class CuentasDaoImpl {
-	
+
 	private String host = "jdbc:mysql://localhost:3306/";
 	private String user = "root";
 	private String pass = "root";
 	private String dbName = "TPInt_GRUPO1_V2";
-	
-	
+
 	public int insert(Cuentas cuenta) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -39,7 +34,7 @@ public class CuentasDaoImpl {
 		}
 		return filas;
 	}
-	
+
 	public int update(Cuentas cuenta) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -61,8 +56,7 @@ public class CuentasDaoImpl {
 		return filas;
 	}
 
-
-	public int delete(Cuentas cuenta){
+	public int delete(Cuentas cuenta) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -73,7 +67,7 @@ public class CuentasDaoImpl {
 		Connection cn = null;
 		try {
 			cn = DriverManager.getConnection(host + dbName, user, pass);
-			Statement st = cn.createStatement();		
+			Statement st = cn.createStatement();
 			String query = "Update cuentas estado= false where nrocuenta= ('" + cuenta.getNumeroCuenta() + "')";
 			filas = st.executeUpdate(query);
 		} catch (Exception e) {

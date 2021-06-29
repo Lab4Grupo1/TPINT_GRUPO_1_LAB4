@@ -4,8 +4,7 @@ import java.sql.Date;
 
 public class DatosPersonales {
 	
-	public DatosPersonales(int dni, int cuil, String nombre, String apellido, String sexo,
-			entidad.Nacionalidad nacionalidad, String direccion, String localidad, String provincia, String mail,
+	public DatosPersonales(int dni, int cuil, String nombre, String apellido, String sexo, Nacionalidad nacionalidad, String direccion, String localidad, String provincia, String mail,
 			Telefonos telefono) { 
 		Dni = dni;
 		Cuil = cuil;

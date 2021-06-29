@@ -1,25 +1,23 @@
 package entidad;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Cuentas {
 	
 	private int NumeroCuenta;
 	private String Cbu;
 	private TipoCuentas TipoCuenta;
-	private TipoMovimiento Movimiento;
 	private int DniCliente;
 	private Date FechaCreacion;
 	private float Saldo;
 	private boolean Estado;
 	
 	
-	public Cuentas(int numeroCuenta, String cbu, TipoCuentas tipoCuenta, TipoMovimiento movimiento, int dniCliente,
+	public Cuentas(int numeroCuenta, String cbu, TipoCuentas tipoCuenta, int dniCliente,
 			Date fechaCreacion, float saldo, boolean estado) { 
 		NumeroCuenta = numeroCuenta;
 		Cbu = cbu;
 		TipoCuenta = tipoCuenta;
-		Movimiento = movimiento;
 		DniCliente = dniCliente;
 		FechaCreacion = fechaCreacion;
 		Saldo = saldo;
@@ -45,12 +43,6 @@ public class Cuentas {
 	}
 	public void setTipoCuenta(TipoCuentas tipoCuenta) {
 		TipoCuenta = tipoCuenta;
-	}
-	public TipoMovimiento getMovimiento() {
-		return Movimiento;
-	}
-	public void setMovimiento(TipoMovimiento movimiento) {
-		Movimiento = movimiento;
 	}
 
 	public int getDniCliente() {

@@ -1,64 +1,75 @@
 package entidad;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Movimientos {
-	
-	public Movimientos() {
-		
-	}
-	
-	public Movimientos(entidad.TipoMovimiento tipoMovimiento, String detalle, Date fecha, float importe) { 
-		TipoMovimiento = tipoMovimiento;
-		Detalle = detalle;
-		Fecha = fecha;
-		Importe = importe;
-	}
+
 	private int Id;
-	private TipoMovimiento TipoMovimiento;
 	private String Detalle;
 	private Date Fecha;
 	private float Importe;
-	
-	
-	
-	public void setId(int id) {
+	private TipoMovimiento TipoMovimiento;
+	private int NumeroCuenta;
+
+	public Movimientos(int id, String detalle, Date fecha, float importe, TipoMovimiento tipoMovimiento, int numeroCuenta) {
 		Id = id;
+		Detalle = detalle;
+		Fecha = fecha;
+		Importe = importe;
+		TipoMovimiento = tipoMovimiento;
+		NumeroCuenta = numeroCuenta;
 	}
+	
+	public Movimientos(){}
 
 	public int getId() {
 		return Id;
 	}
 
-	
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getDetalle() {
+		return Detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		Detalle = detalle;
+	}
+
+	public Date getFecha() {
+		return Fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		Fecha = fecha;
+	}
+
+	public float getImporte() {
+		return Importe;
+	}
+
+	public void setImporte(float importe) {
+		Importe = importe;
+	}
+
 	public TipoMovimiento getTipoMovimiento() {
 		return TipoMovimiento;
 	}
-
 
 	public void setTipoMovimiento(TipoMovimiento tipoMovimiento) {
 		TipoMovimiento = tipoMovimiento;
 	}
 
+	public int getNumeroCuenta() {
+		return NumeroCuenta;
+	}
 
-	public String getDetalle() {
-		return Detalle;
+	public void setNumeroCuenta(int numeroCuenta) {
+		NumeroCuenta = numeroCuenta;
 	}
-	public void setDetalle(String detalle) {
-		Detalle = detalle;
-	}
-	public Date getFecha() {
-		return Fecha;
-	}
-	public void setFecha(Date fecha) {
-		Fecha = fecha;
-	}
-	public float getImporte() {
-		return Importe;
-	}
-	public void setImporte(float importe) {
-		Importe = importe;
-	}
-	
 	
 }
+	
+	

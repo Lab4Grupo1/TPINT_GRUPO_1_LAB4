@@ -1,20 +1,16 @@
 package daoImpl;
  
 
-import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import dao.TelefonosDao;
-import entidad.DatosPersonales;
 import entidad.Telefonos;
-import entidad.TipoCuentas;
-import entidad.Usuario;
 
 public class TelefonosDaoImpl  implements TelefonosDao{
 

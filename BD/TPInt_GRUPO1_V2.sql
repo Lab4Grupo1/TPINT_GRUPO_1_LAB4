@@ -26,22 +26,13 @@ CREATE TABLE `rol` (
   `Estado` boolean not NULL,
   PRIMARY KEY (`id`)
 );
-CREATE TABLE `cuentas` (
-  `NumeroCuenta` int NOT NULL AUTO_INCREMENT,
-  `Cbu` varchar(45) NOT NULL,
-  `FechaCreacion` date DEFAULT NULL,
-  `Saldo` decimal(10,0) DEFAULT NULL,
-  `Estado` boolean not NULL,
-  `FK_idTipoCuenta` int NOT NULL,
-  `FK_idMovimiento` int NOT NULL,
-  `FK_DniCliente` int NOT NULL,
-  PRIMARY KEY (`NumeroCuenta`,`Cbu`),
-  KEY `FK_idTipoCuenta_idx` (`FK_idTipoCuenta`),
-  KEY `FK_idMovimiento_idx` (`FK_idMovimiento`),
-  KEY `FK_DniCliente_idx` (`FK_DniCliente`),
-  CONSTRAINT `FK_DniCliente` FOREIGN KEY (`FK_DniCliente`) REFERENCES `datospersonales` (`Dni`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_idMovimiento` FOREIGN KEY (`FK_idMovimiento`) REFERENCES `movimientos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_idTipoCuenta` FOREIGN KEY (`FK_idTipoCuenta`) REFERENCES `tipocuenta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `telefonos` (
+  `idTelefonos` int NOT NULL AUTO_INCREMENT,
+  `Numero` varchar(45) DEFAULT NULL,
+  `FK_idTipo` int NOT NULL,
+  PRIMARY KEY (`idTelefonos`),
+  KEY `FK_idTipo_idx` (`FK_idTipo`),
+  CONSTRAINT `FK_idTipo` FOREIGN KEY (`FK_idTipo`) REFERENCES `tipotelefono` (`idTipo`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ;
 CREATE TABLE `datospersonales` (
   `Dni` int NOT NULL,
@@ -62,15 +53,32 @@ CREATE TABLE `datospersonales` (
   CONSTRAINT `FK_idTelefono` FOREIGN KEY (`FK_idTelefono`) REFERENCES `telefonos` (`idTelefonos`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_Nacionalidad` FOREIGN KEY (`FK_Nacionalidad`) REFERENCES `nacionalidad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE `cuentas` (
+  `NumeroCuenta` int NOT NULL AUTO_INCREMENT,
+  `Cbu` varchar(45) NOT NULL,
+  `FechaCreacion` date DEFAULT NULL,
+  `Saldo` decimal(10,0) DEFAULT NULL,
+  `Estado` boolean not NULL,
+  `FK_idTipoCuenta` int NOT NULL,
+  `FK_DniCliente` int NOT NULL,
+  PRIMARY KEY (`NumeroCuenta`,`Cbu`),
+  KEY `FK_idTipoCuenta_idx` (`FK_idTipoCuenta`),
+  KEY `FK_DniCliente_idx` (`FK_DniCliente`),
+  CONSTRAINT `FK_DniCliente` FOREIGN KEY (`FK_DniCliente`) REFERENCES `datospersonales` (`Dni`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_idTipoCuenta` FOREIGN KEY (`FK_idTipoCuenta`) REFERENCES `tipocuenta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ;
 CREATE TABLE `movimientos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Detalle` varchar(45) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
   `Importe` decimal(10,0) DEFAULT NULL,
   `FK_IdTipoMovimiento` int NOT NULL,
+  `FK_IdCuentas` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_IdTipoMovimiento_idx` (`FK_IdTipoMovimiento`),
-  CONSTRAINT `FK_IdTipoMovimiento` FOREIGN KEY (`FK_IdTipoMovimiento`) REFERENCES `tipomovimiento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_IdCuentas_idx` (`FK_IdCuentas`),
+  CONSTRAINT `FK_IdTipoMovimiento` FOREIGN KEY (`FK_IdTipoMovimiento`) REFERENCES `tipomovimiento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_IdCuentas` FOREIGN KEY (`FK_IdCuentas`) REFERENCES `cuentas` (`NumeroCuenta`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ;
 CREATE TABLE `prestamos` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -94,14 +102,6 @@ CREATE TABLE `solicitud` (
   KEY `FK_NumeroCuenta_idx` (`FK_NCuenta`),
   CONSTRAINT `FK_NCuenta` FOREIGN KEY (`FK_NCuenta`) REFERENCES `cuentas` (`NumeroCuenta`) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE `telefonos` (
-  `idTelefonos` int NOT NULL AUTO_INCREMENT,
-  `Numero` varchar(45) DEFAULT NULL,
-  `FK_idTipo` int NOT NULL,
-  PRIMARY KEY (`idTelefonos`),
-  KEY `FK_idTipo_idx` (`FK_idTipo`),
-  CONSTRAINT `FK_idTipo` FOREIGN KEY (`FK_idTipo`) REFERENCES `tipotelefono` (`idTipo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
 CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(45) DEFAULT NULL,
@@ -130,15 +130,3 @@ insert into`tipotelefono`(Descripcion) values('Celular'),('Hogar'),('Empresa'),(
 insert into`rol` (`Descripcion`,`Estado`)values ('Adminitrativo',true),('Cliente',true),('Gerente',false);
 
  select * from tipotelefono
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
