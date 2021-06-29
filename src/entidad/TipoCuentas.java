@@ -1,10 +1,10 @@
 package entidad;
 
 public class TipoCuentas {
-	public TipoCuentas(String descripcion) {
-		super();
+	public TipoCuentas(String descripcion) { 
 		Descripcion = descripcion;
 	}
+	public TipoCuentas( ) {}
 
 	private int Id;
 	private String Descripcion;

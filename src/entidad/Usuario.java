@@ -1,20 +1,23 @@
 package entidad;
 
 public class Usuario {
-	public Usuario(String nombreUsuario, String contraseña, Rol rol, DatosPersonales datosPersonales, boolean estado) {
+	
+	public Usuario(String nombreUsuario, String contraseña, Rol rol, DatosPersonales dp_DNI, boolean estado) {
 		super();
 		NombreUsuario = nombreUsuario;
 		Contraseña = contraseña;
 		this.rol = rol;
-		this.datosPersonales = datosPersonales;
+		this.dp_DNI = dp_DNI;
 		Estado = estado;
 	}
+	
+	public Usuario(){}
 
 	private int Id;
 	private String NombreUsuario;
 	private String Contraseña;
 	private Rol rol;
-	private DatosPersonales datosPersonales;
+	private DatosPersonales dp_DNI;
 	private boolean Estado;
 	
 	public int getId() {
@@ -45,12 +48,12 @@ public class Usuario {
 		this.rol = rol;
 	}
 
-	public DatosPersonales getDatosPersonales() {
-		return datosPersonales;
+	public DatosPersonales getdp_DNI() {
+		return dp_DNI;
 	}
 
-	public void setDatosPersonales(DatosPersonales datosPersonales) {
-		this.datosPersonales = datosPersonales;
+	public void setDatosPersonales(DatosPersonales dp_DNI) {
+		this.dp_DNI = dp_DNI;
 	}
 
 	public boolean isEstado() {

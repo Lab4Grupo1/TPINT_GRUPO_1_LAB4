@@ -1,8 +1,12 @@
 package entidad;
 
 public class TipoMovimiento {
-	public TipoMovimiento(String descripcion) {
-		super();
+	
+	public TipoMovimiento() {
+		
+	}
+	
+	public TipoMovimiento(String descripcion) { 
 		Descripcion = descripcion;
 	}
 

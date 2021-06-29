@@ -38,9 +38,9 @@
 </ul> 
 <br> 
 	
-	
-  <button class="btn btn-primary" type="submit">Autorizar</button>
-  <button class="btn btn-primary" type="submit">Rechazar</button>
+  <input class="btn btn-primary col-md-2" type="submit" value="Autorizar" id="Aceptar"> 
+  <input class="btn btn-primary col-md-2" type="submit" value="Rechazar" id="Cancelar">
+  
 
 </jsp:body>
 </t:masterBanco>

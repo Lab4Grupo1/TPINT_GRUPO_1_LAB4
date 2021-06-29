@@ -1,22 +1,13 @@
 package entidad;
 
 public class Telefonos {
-	public Telefonos(TipoTelefono tipo, String numero) {
-		super();
-		Tipo = tipo;
+	public Telefonos(String numero) {  
 		Numero = numero;
 	}
-	private int Id;
-	private TipoTelefono Tipo;
-	private String Numero;
-	
-	
-	public TipoTelefono getTipo() {
-		return Tipo;
-	}
-	public void setTipo(TipoTelefono tipo) {
-		Tipo = tipo;
-	}
+	public Telefonos() {}
+	private int Id; 
+	private String Numero; 
+	 
 	public String getNumero() {
 		return Numero;
 	}

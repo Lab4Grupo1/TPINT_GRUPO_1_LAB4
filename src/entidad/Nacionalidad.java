@@ -2,9 +2,9 @@ package entidad;
 
 public class Nacionalidad {
 	public Nacionalidad(String nacionalidad) {
-		super();
 		Nacionalidad = nacionalidad;
 	}
+	public Nacionalidad() {	}
 	private int Id;
 	private String Nacionalidad;
 	

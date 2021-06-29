@@ -3,8 +3,12 @@ package entidad;
 import java.util.Date;
 
 public class Movimientos {
-	public Movimientos(entidad.TipoMovimiento tipoMovimiento, String detalle, Date fecha, float importe) {
-		super();
+	
+	public Movimientos() {
+		
+	}
+	
+	public Movimientos(entidad.TipoMovimiento tipoMovimiento, String detalle, Date fecha, float importe) { 
 		TipoMovimiento = tipoMovimiento;
 		Detalle = detalle;
 		Fecha = fecha;
@@ -16,6 +20,12 @@ public class Movimientos {
 	private Date Fecha;
 	private float Importe;
 	
+	
+	
+	public void setId(int id) {
+		Id = id;
+	}
+
 	public int getId() {
 		return Id;
 	}

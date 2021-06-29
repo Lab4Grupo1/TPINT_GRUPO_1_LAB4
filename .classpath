@@ -9,5 +9,11 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/FF/UTN/CARRERA/00 - Lab 4/Tema 6/AppEscritorio_IV/mysql-connector-java-5.1.47-bin.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ferna/Downloads/servlet-api.jar/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

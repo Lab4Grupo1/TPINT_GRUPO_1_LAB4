@@ -15,8 +15,7 @@ public class Cuentas {
 	
 	
 	public Cuentas(int numeroCuenta, String cbu, TipoCuentas tipoCuenta, TipoMovimiento movimiento, int dniCliente,
-			Date fechaCreacion, float saldo, boolean estado) {
-		super();
+			Date fechaCreacion, float saldo, boolean estado) { 
 		NumeroCuenta = numeroCuenta;
 		Cbu = cbu;
 		TipoCuenta = tipoCuenta;
@@ -26,6 +25,8 @@ public class Cuentas {
 		Saldo = saldo;
 		Estado = estado;
 	}
+	public Cuentas() {}
+	
 	public int getNumeroCuenta() {
 		return NumeroCuenta;
 	}
