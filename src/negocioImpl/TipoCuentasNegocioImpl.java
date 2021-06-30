@@ -1,6 +1,6 @@
 package negocioImpl;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import daoImpl.TipoCuentasDaoImpl;
 import entidad.TipoCuentas;
@@ -11,7 +11,7 @@ public class TipoCuentasNegocioImpl implements TipoCuentasNegocio {
 	TipoCuentasDaoImpl tcdao = new TipoCuentasDaoImpl();
 	
 	@Override
-	public List<TipoCuentas> readAll() {
+	public ArrayList<TipoCuentas> readAll() {
 		// TODO Auto-generated method stub
 		return tcdao.readAll();
 	}
