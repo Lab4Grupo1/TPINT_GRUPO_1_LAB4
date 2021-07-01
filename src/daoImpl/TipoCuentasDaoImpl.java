@@ -43,7 +43,6 @@ public class TipoCuentasDaoImpl implements TiposCuentaDao {
 				TcuentaRs.setDescripcion(rs.getString("descripcion"));
 
 				lcue.add(TcuentaRs);
-
 			}
 			cn.close();
 
